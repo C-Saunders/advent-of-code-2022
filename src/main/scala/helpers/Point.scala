@@ -13,7 +13,7 @@ class Point(val row: Int, val column: Int) extends Ordered[Point]:
 
   def manhattanDistance(other: Point): Int = (row - other.row).abs + (column - other.column).abs
 
-  def chebyshevDistance(other: Point): Int = List((row - other.row).abs, (column - other.column).abs).max
+  def chebyshevDistance(other: Point): Int = (row - other.row).abs.max((column - other.column).abs)
   
   // this doesn't assume rows and cols can't be negative and it doesn't know about grid bounds
   // it just returns all four points around this one
